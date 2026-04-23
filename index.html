@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <title>API Trigger UI</title>
+    <style>
+      body { font-family: sans-serif; display: flex; flex-direction: column;
+      align-items: center; padding: 50px; background: #f0f2f5; }
+
+      .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; }
+
+      button { margin: 10px; padding: 12px 24px; font-size: 16px; cursor:
+      pointer; border: none; border-radius: 6px; transition: 0.2s; color: white; }
+      .btn-1 { background: #4CAF50; }
+      .btn-2 { background: #2196F3; }
+      .btn-3 { background: #9C27B0; }
+      button:hover { opacity: 0.8; transform: translateY(-2px); }
+      #status { margin-top: 20px; padding: 15px; border-radius: 6px; min-width:
+      200px; display: none; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>API Control Panel</h2>
+      <button
+        class="btn-1"
+        onclick="callApi('https://api.example.com/endpoint1', 1)"
+      >
+        Call API 1
+      </button>
+      <button
+        class="btn-2"
+        onclick="callApi('https://api.example.com/endpoint2', 2)"
+      >
+        Call API 2
+      </button>
+      <button
+        class="btn-3"
+        onclick="callApi('https://api.example.com/endpoint3', 3)"
+      >
+        Call API 3
+      </button>
+      <div id="status"></div>
+    </div>
+    <script>
+      async function callApi(url, id) {
+        const statusDiv = document.getElementById("status");
+        statusDiv.style.display = "block";
+
+        //   Step 2: Upload & Host
+        //   1. Create a Public Repository on GitHub.
+        //   2. Upload index.html to the main branch.
+        //   3. Go to Settings > Pages, select 'Deploy from branch', and choose 'Main'.
+
+        //   Generated for Web Development Project • 2026
+
+        statusDiv.style.background = "#e3f2fd";
+        statusDiv.innerText = `Calling API ${id}...`;
+        try {
+          // Note: Replace with your actual API logic
+          const response = await fetch(url);
+          const data = await response.json();
+          statusDiv.style.background = "#c8e6c9";
+          statusDiv.innerText = `Success: Response from API ${id} received!`;
+          console.log(data);
+        } catch (error) {
+          statusDiv.style.background = "#ffcdd2";
+          statusDiv.innerText = `Error: Could not reach API ${id}. (Check
+      CORS settings)`;
+        }
+      }
+    </script>
+  </body>
+</html>
