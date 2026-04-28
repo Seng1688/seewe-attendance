@@ -39,6 +39,9 @@
       .btn-3 {
         background: #9c27b0;
       }
+      .btn-4 {
+        background: #ff2222;
+      }
       button:hover {
         opacity: 0.8;
         transform: translateY(-2px);
@@ -94,6 +97,19 @@
         Break In
       </button>
 
+      <button
+        class="btn-4"
+        onclick="
+          callApi('https://team.seewework.com/api/app/attendance/update', 3, {
+            s: 'clockout',
+            location:
+              '143, Jalan Peel, Maluri, 55100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia',
+            lat_lng: '3.1289677,101.7246652',
+          })
+        "
+      >
+        Clock Out
+      </button>
       <div id="status"></div>
     </div>
     <script>
