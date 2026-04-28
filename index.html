@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>API Trigger UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
         font-family: sans-serif;
@@ -18,17 +19,23 @@
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         text-align: center;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
       }
 
       button {
-        margin: 10px;
-        padding: 12px 24px;
-        font-size: 16px;
+        margin: 12px;
+        padding: 16px 32px;
+        font-size: 18px;
+        font-weight: 600;
         cursor: pointer;
         border: none;
-        border-radius: 6px;
-        transition: 0.2s;
+        border-radius: 8px;
+        transition: 0.15s;
         color: white;
+        display: inline-block;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
       }
       .btn-1 {
         background: #4caf50;
@@ -50,8 +57,34 @@
         margin-top: 20px;
         padding: 15px;
         border-radius: 6px;
-        min-width: 200px;
+        min-width: 0;
         display: none;
+        word-break: break-word;
+        width: 100%;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 480px) {
+        body {
+          padding: 20px;
+        }
+
+        .container {
+          padding: 18px;
+          max-width: 420px;
+        }
+
+        button {
+          display: block;
+          width: 100%;
+          margin: 10px 0;
+          font-size: 19px;
+          padding: 14px 20px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
       }
     </style>
   </head>
